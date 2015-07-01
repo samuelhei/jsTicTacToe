@@ -13,7 +13,7 @@ Game
 
 The game is very similar to original Tic Tac Toe, but this game will use bigger boards to play and will not end when the first group is made, but  when there is no more free space.
 
-Winner is the player with more groups of three in any direction (horizontal, vertical and diagonal). There is no problem to reutilize pieces from another group, eg: 4 "X" in same line ne count 2 points rather than one.
+Winner is the player with more groups of three in any direction (horizontal, vertical and diagonal). There is no problem to reutilize pieces from another group, eg: 4 "X" in same line count 2 points rather than one.
 
 
 Game Object
