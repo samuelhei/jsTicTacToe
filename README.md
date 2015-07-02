@@ -36,4 +36,8 @@ Your robot will receive a object like this, and needs to return a object like th
       you: 'O',
       opponent: 'X' }
 
-Develop and commit your own robot!
+Change [challenger.js](https://github.com/samuelhei/jsTicTacToe/blob/master/players/challenger.js) with your strategy!
+
+Test you robot with:
+
+    npm test
