@@ -1,11 +1,14 @@
 {
   "name": "jsTicTacToeExtanded",
   "version": "1.0.0",
-  "description": "",
+  "description": "Very simple game to learn AI - Tic Tac Toe extended.",
   "main": "play.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha"
   },
-  "author": "samuelhei",
-  "license": "MIT"
+  "author": "Samuel Heinrichs <ti.samuelh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "mocha": "^2.2.5"
+  }
 }
