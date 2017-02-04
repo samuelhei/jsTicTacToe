@@ -103,10 +103,6 @@ module.exports = function(game) {
     var totalMe = highMe - initMe;
     var totalOp = highOp - initOp;
     
-    console.log('Me: ',totalMe,' TOTAL: ',initMe);
-    console.log('Op: ',totalOp,' TOTAL: ',initOp)
-    
-    
     var goFree = false;
 
     if(totalOp > totalMe && totalOp > 1) {

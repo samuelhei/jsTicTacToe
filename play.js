@@ -1,9 +1,9 @@
 var board = require('./board');
 
-var playerX = require('./players/randomBot');
-var playerO = require('./players/template');
+var playerX = require('./players/SamCalculator');
+var playerO = require('./players/challenger');
 
-var gameBoard = new board(15,15);
+var gameBoard = new board(9,9);
 
 var game = {
   "free" : gameBoard.getFreeChar(),

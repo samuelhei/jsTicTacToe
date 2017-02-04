@@ -1,5 +1,5 @@
 var board = require('../board')
-    , winner = require('../players/template') // Winner
+    , winner = require('../players/SamCalculator') // Winner
     , challenger =  require('../players/challenger'); // Challenger
     
 var assert = require('assert')
@@ -16,7 +16,7 @@ var echo = '';
 
 function play(n) {
     
-    var gameBoard = new board(5,5)
+    var gameBoard = new board(9,9)
         , game = {"free" : gameBoard.getFreeChar()};
 
     while(gameBoard.havefreeSpaces()) {
@@ -78,9 +78,6 @@ describe("Writing a winning bot.", function () {
     this.timeout(30000);
     play(0);
     
-    
-   
-    
     it("you: "+pointsC+" points, opponent: "+pointsW,function () {
         sys.print(echo);
         assert.ok(
@@ -89,7 +86,6 @@ describe("Writing a winning bot.", function () {
         ); 
        
     });
-    
     
 });
   
