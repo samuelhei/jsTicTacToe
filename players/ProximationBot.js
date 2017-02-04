@@ -41,7 +41,7 @@ module.exports = function(game) {
 		}
 		else if (c + 1 < board[0].length && r + 1 < board.length && board[r + 1][c + 1] === game.free) {
 			c = c + 1
-			r = r
+			r = r + 1
 			return {
 				"name": "ProximationBot",
 				"play": [r, c]
