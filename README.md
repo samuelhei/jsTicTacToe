@@ -38,6 +38,12 @@ Your robot will receive a object like this, and needs to return a object like th
 
 Change [challenger.js](https://github.com/samuelhei/jsTicTacToe/blob/master/players/challenger.js) with your strategy!
 
-Test you robot with:
+Test you robot (10 games interchanging the X and O player) with:
 
     npm test
+  
+Boardlist
+-----------
+
+    1. SamCalculator (@samuelhei)
+    2.  ProcimationBot (@ipsBruno)
