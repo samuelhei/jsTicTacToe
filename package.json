@@ -4,7 +4,8 @@
   "description": "Very simple game to learn AI - Tic Tac Toe extended.",
   "main": "index.js",
   "scripts": {
-    "test": "node ./node_modules/mocha/bin/mocha"
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "start": "node index"
   },
   "author": "Samuel Heinrichs <ti.samuelh@gmail.com>",
   "license": "MIT",
