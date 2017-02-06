@@ -226,8 +226,8 @@ module.exports = function(game) {
         return play(free[0]);
     }
     
-    var op = bestPlay(free,game.board,game.opponent, 9)
-    var me = bestPlay(free,game.board,game.you, 9)
+    var op = bestPlay(free,game.board,game.opponent, 3)
+    var me = bestPlay(free,game.board,game.you, 3)
     
     if(op.score > me.score) {
         return play(op.cordn);
