@@ -68,7 +68,6 @@ board.prototype.count = function(type) {
             }
         }
     }
-    
     return count;
 };
 
@@ -98,7 +97,6 @@ board.prototype.getBoard = function() {
     return this.board;
 }
 
-
 board.prototype.getFreeChar= function(){
     return free;
 }
@@ -124,5 +122,9 @@ board.prototype.play = function(y,x) {
         this.board[validPlay[0]][validPlay[1]] = player;
     }
 };
+
+board.prototype.setBoard = function(board) {
+    this.board = board;
+}
 
 module.exports = board;
