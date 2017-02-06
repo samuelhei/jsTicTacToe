@@ -1,0 +1,134 @@
+<!document html>
+<html>
+    <head>
+        <title>Super TicTacToe</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            .cell {
+                width: 45px;
+                height: 45px;
+                margin: 3px;
+                border: 1px solid;
+                display: inline-block;
+                text-align: center;
+                vertical-align: middle;
+                line-height: 45px;
+                font-size: 40px;
+            }
+            .line {
+                display: inline-block;
+                margin: 0 auto;
+            }
+            .break {
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="page-header">Super TicTacToe</h1>
+            
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <p>This is TicTacToe extended, you are playing against <a href="https://github.com/samuelhei/jsTicTacToe/blob/master/players/SamCalculator.js" target="_blank">SamCalculator Bot</a>. If you are up for a Bot vs Bot challenge go to <a href="https://github.com/samuelhei/jsTicTacToe">jsTicTacToe project</a> and create your JavasCript bot!</p>
+                    <p>The rules are simple: Who made more points wins (until having free space). To make a point you need to create a group o 3 (every direction is allowed).</p>
+                    <p>Good Game.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    X points: <span id="countX">0</span> O points: <span id="countO">0</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    X points: <span id="countX">0</span> O points: <span id="countO">0</span>
+                </div>
+            </div>    
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center" id="board">
+                    THE BOARD
+                </div>
+            </div>    
+        </div>
+    
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <script>
+            var me = false;
+            var board = [];
+            
+            function initEvents() {
+                $('.cell').on('click', function(e){
+                   var el = $(e.target);
+                   var cordn = el.data("cordn");
+                   
+                   if(me && board[cordn[0]][cordn[1]] == ' ') {
+                       board[cordn[0]][cordn[1]] = 'O';
+                       console.log(board);
+                       $.post('/play', {board: board}, function(data){
+                           $('#countX').html(data.countX);
+                           $('#countO').html(data.countO);
+                           
+                           if(data.finished) {
+                               if(data.countX > data.countO) {
+                                   alert('You Lost!')
+                               }
+                               else if(data.countX < data.countO) {
+                                   alert('You Win');
+                               }
+                               else {
+                                   alert('Draw Game');
+                               }
+                               newGame();
+                           }
+                           
+                           board = data.board;
+                           printBoard(board);
+                           me = true;
+                       });
+                       
+                       el.html('O');    
+                       me = false;
+                   }
+                });
+            }
+        
+            function printBoard(data) {
+                html = '';
+                for(var r in data){
+                   html += '<div class="line">';
+                   for(var c in data[r]) {
+                       html += '<div class="cell" data-cordn="['+r+','+c+']">';
+                       if(data[r][c] != ' ') {
+                            html += data[r][c];                           
+                       }
+                       else {
+                           html += '&nbsp;';    
+                       }
+                       html += '</div>';
+                   }
+                   html += '</div>';
+                   html += '<div class="break"></div>';
+               }
+               $('#board').html(html);
+               initEvents();
+            }
+        
+            function newGame() {
+                $('#countX').html(0);
+                $('#countO').html(0);
+                jQuery.get('/newGame',function(data){
+                   board = data;
+                   printBoard(data);
+                   me = true;
+                });
+            }
+        
+            $( document ).ready(function(){
+               newGame();
+            });
+        </script>
+    </body>
+</html>
