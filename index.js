@@ -46,10 +46,13 @@ app.post('/play', function(req, res){
     game["board"] = gameBoard.getBoard();
     game["you"] = 'X';
     game["opponent"] = 'O';
+    
     if(gameBoard.havefreeSpaces()) {
         var player = playerX(JSON.parse(JSON.stringify(game)));
         gameBoard.play(player.play[0],player.play[1]);
     }
+    
+    
     res.json({board:gameBoard.getBoard(), 
               countX: gameBoard.count('X'),
               countO: gameBoard.count('O'),
