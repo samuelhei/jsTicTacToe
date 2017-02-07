@@ -23,19 +23,20 @@
             .break {
                 display: block;
             }
+            .margin {
+                margin-top: 20px;
+            }
         </style>
     </head>
     <body>
         <div class="container">
             <h1 class="page-header">Super TicTacToe</h1>
-            
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
-                    <p>This is TicTacToe extended, you are playing against <a href="https://github.com/samuelhei/jsTicTacToe/blob/master/players/SamCalculator.js" target="_blank">SamCalculator Bot</a>. If you are up for a Bot vs Bot challenge go to <a href="https://github.com/samuelhei/jsTicTacToe">jsTicTacToe project</a> and create your JavasCript bot!</p>
-                    <p>The rules are simple: Who made more points wins (until having free space). To make a point you need to create a group of 3 (every direction is allowed).</p>
-                    <p>Good Game.</p>
+                    <p>To win this game you need to make more points than computer, every group of 3 in every direction is a point. This is difficult, but possible! Have a good game.</p>
                 </div>
             </div>
+
             <div class="row">
                 <div class="col-md-6 col-md-offset-3 text-center">
                     X points: <span id="countX">0</span> O points: <span id="countO">0</span>
@@ -46,11 +47,17 @@
                     X points: <span id="countX">0</span> O points: <span id="countO">0</span>
                 </div>
             </div>    
-            <div class="row">
+            <div class="row margin">
                 <div class="col-md-6 col-md-offset-3 text-center" id="board">
                     THE BOARD
                 </div>
-            </div>    
+            </div>
+            <div class="row margin">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <p>You are playing against <a href="https://github.com/samuelhei/jsTicTacToe/blob/master/players/SamCalculator.js" target="_blank">SamCalculator Bot</a>. If you are up for a Bot vs Bot challenge go to <a href="https://github.com/samuelhei/jsTicTacToe">jsTicTacToe project</a> on GitHub and create your Bot!</p>
+                    <p>Created by Samuel Heinrichs (ti.samuelh at gmail.com)</p>
+                </div>
+            </div>
         </div>
     
         <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
