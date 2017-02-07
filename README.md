@@ -1,12 +1,14 @@
 jsTicTacToe
 ===========
 
-Platform to AI robots battle Tic Tac Toe game.
+Welcome to Super TicTacToe Game, originaly created to be a Bot x Bot game, but now we have a Bot x Human too! You can play at [https://jstictactoe.herokuapp.com/](https://jstictactoe.herokuapp.com/) or clone this repository and initialize the index.js server.
+
+To create a Bot adversary go to players folder and change de challenger.js file. 
 
 Idea
 -----
 
-The ideia behind game is to provide a very simple game to develop better AI robots. I played [jsPoker](https://github.com/mdp/JsPoker), and is a great game (I recomend), but the robots are with more focus in the cards than other players. Because this is very simple game, I think soon will exhaust all game strategy and than the players will focus in others players actions.    
+The ideia behind game is to provide a very simple game to develop better AI robots. I played [jsPoker](https://github.com/mdp/JsPoker), and is a great game (I recomend), but I few the need of create a simpler game as object of study.      
 
 Game
 ----
