@@ -27,15 +27,15 @@ app.get('/newGame', function(req, res){
     game["you"] = 'X';
     game["opponent"] = 'O';
     
-    //var player = playerX(JSON.parse(JSON.stringify(game)));
-    //gameBoard.play(player.play[0],player.play[1]);
+    var player = playerX(JSON.parse(JSON.stringify(game)));
+    gameBoard.play(player.play[0],player.play[1]);
     res.json(gameBoard.getBoard());
 });
 
 app.post('/play', function(req, res){
     
     var board = require('./board');
-    var playerX = require('./players/SamCalculator');
+    var playerX = require('./players/newSam');
     var gameBoard = new board(6,6);
     
     var game = {
