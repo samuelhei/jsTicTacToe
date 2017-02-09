@@ -27,8 +27,8 @@ app.get('/newGame', function(req, res){
     game["you"] = 'X';
     game["opponent"] = 'O';
     
-    var player = playerX(JSON.parse(JSON.stringify(game)));
-    gameBoard.play(player.play[0],player.play[1]);
+    //var player = playerX(JSON.parse(JSON.stringify(game)));
+    //gameBoard.play(player.play[0],player.play[1]);
     res.json(gameBoard.getBoard());
 });
 
