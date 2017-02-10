@@ -35,7 +35,7 @@ app.get('/newGame', function(req, res){
 app.post('/play', function(req, res){
     
     var board = require('./board');
-    var playerX = require('./players/newSam');
+    var playerX = require('./players/SamCalculator');
     var gameBoard = new board(6,6);
     
     var game = {
